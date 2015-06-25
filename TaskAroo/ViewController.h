@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
+#import "GlobalViewController.h"
+#import "SignUpViewController.h"
+#import "SignInViewController.h"
+@interface ViewController : GlobalViewController
+{
+    UIView *mainview,*topview,*bodyview;
+    UIImageView *logoimg;
+    UIButton *btnsignin,*btnsignup,*btnpost;
+    UITextField *txttask;
+    UILabel *lblor,*lbltask;
+    UITableView *tbltask;
+    NSMutableArray *sections,*tasktype,*selectedtasktype,*sections1;
+    int k;
+}
 
 @end
 
