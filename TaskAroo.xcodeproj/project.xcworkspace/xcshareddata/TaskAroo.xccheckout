@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5E2C3D37-6236-4396-B0EF-9CA182792D47</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TaskAroo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B4750B338D306F1780A74FC7570F0171396DE3BF</key>
+		<string>https://github.com/soumarsi/TaskAroo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TaskAroo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B4750B338D306F1780A74FC7570F0171396DE3BF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/soumarsi/TaskAroo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B4750B338D306F1780A74FC7570F0171396DE3BF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B4750B338D306F1780A74FC7570F0171396DE3BF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TaskAroo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -463,8 +463,6 @@
         lblno.text=@"1";
         lbltaskrequire.text=@"REQUIREMENT";
 
-        
-      //  [btnsignup setTitle:@"Sign Up" forState:UIControlStateNormal];
         [self deleteDocDirectory];
     }
     else if (taskfilled==YES)
