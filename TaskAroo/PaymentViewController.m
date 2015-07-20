@@ -16,7 +16,7 @@
 @end
 
 @implementation PaymentViewController
-@synthesize btnradiomanual,btnradioscan,mainscroll,btnpayment,txtbillname,myspinner,txtcardno,txtexpdt,tctcvv,btnscancard,btndt;
+@synthesize btnradiomanual,btnradioscan,mainscroll,btnpayment,txtbillname,myspinner,txtcardno,txtexpdt,tctcvv,btnscancard,btndt,oneView,threeView,twoView;
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
@@ -31,6 +31,17 @@
     [self headercall];
     
  //   mainscroll.contentSize=CGSizeMake(0, 1200);
+    oneView.layer.borderColor = [UIColor blackColor].CGColor;
+    oneView.layer.borderWidth = 0.5f;
+    oneView.layer.cornerRadius=oneView.frame.size.width/2;
+    
+    threeView.layer.borderColor = [UIColor blackColor].CGColor;
+    threeView.layer.borderWidth = 0.5f;
+    threeView.layer.cornerRadius=threeView.frame.size.width/2;
+    
+    twoView.layer.borderColor = [UIColor blackColor].CGColor;
+    twoView.layer.borderWidth = 0.5f;
+    twoView.layer.cornerRadius=twoView.frame.size.width/2;
     
     UIGraphicsBeginImageContext(mainscroll.frame.size);
     [[UIImage imageNamed:@"bg.png"] drawInRect:mainscroll.bounds];

@@ -48,6 +48,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnleftviewextra;
 @property (weak, nonatomic) IBOutlet UIButton *btnlogo;
 @property (weak, nonatomic) IBOutlet UIView *headerview;
+@property (weak, nonatomic) IBOutlet UIView *Twoview;
+@property (weak, nonatomic) IBOutlet UIView *threeView;
+@property (weak, nonatomic) IBOutlet UIView *fourView;
+@property (weak, nonatomic) IBOutlet UILabel *lbltwo;
+@property (weak, nonatomic) IBOutlet UILabel *lblthree;
+@property (weak, nonatomic) IBOutlet UILabel *lblfour;
+@property (weak, nonatomic) IBOutlet UILabel *lbltasktop;
 
 //@property (weak, nonatomic) IBOutlet UIButton *btnsignout;
 @property (weak, nonatomic) IBOutlet UIScrollView *mainscroll;

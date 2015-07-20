@@ -45,6 +45,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnscancard;
 @property (weak, nonatomic) IBOutlet UIButton *btndt;
 - (IBAction)dateclk:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *oneView;
+@property (weak, nonatomic) IBOutlet UIView *twoView;
+@property (weak, nonatomic) IBOutlet UIView *threeView;
 
 //@property (weak, nonatomic) IBOutlet UIScrollView *txtcardno;
 

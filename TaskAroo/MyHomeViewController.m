@@ -17,7 +17,7 @@
 @end
 
 @implementation MyHomeViewController
-@synthesize btnsignin,mainscroll,taskdescmainview,taskdescview,txtphoto,txtvwtaskdesc,lblrepeattask,txtday,txtcity,txtpcode,txtprovince,txtvwaddress,deadlineview,deadlinemainview,bidclsdeadview,btnbusiness,btncityarrow,btndeliverychk,btnindividual,btnradiobusi,btnradioindiv,btntaskdescarrow,btntasklocationarrow,taskcompdtview,tasklocationmainview,tasklocationview,btncontractpayarrow,btndeadlinearrow,btnpayarrow,btnpaydetail,btnpricearrow,taskdesctopimg,pricemainview,priceview,tasklocationtopimg,deadlinetopimg,pricetopimg,lblprice,lbldeadline,lbltasklocation,camerabtn,addedimg,btnbidtick,btnphtick,btnvehicletick,btnestimateddayarrow,txtcontractorpay,txtperjob,txttaskname,btnperhour,btnperjob,btnradioperhour,btnradioperjob,lblcontactorpay,contratorlineimg,btndeadlineextra,btnpriceextra,btntasklocationextra,btnrepeattaskarrow,txtrepeattask,lbltaskcompletiondt,lblbiddt,lblbidmonth,lblbidtime,lblbidyr,lbltaskdt,lbltaskmonth,lbltasktime,lbltaskyr,btnbidclosedeadline,btnbidclosedeadline1,btntaskcompdt,txttime,imgtimearrow,btntime,img,img1,lbltaskdesc,lbladdress,taskdetaildic,taskfilled,btnsignup,btnrepeattaskextra,btnday,btnprovinceextra,btncontractorpayamt,btnpayamt,btnbid,btndonebyph,btnvehicle,editview,imgagreetick,btnagreetick,btnedit,myspinner,lblno,lbltaskrequire,camerabtnextra,logoimage,btnleftview,btnleftviewextra,btnlogo,headerview,deliveryview,txtdroplocation,lbldroplocation,lblpagename,btndeliveryextra;
+@synthesize btnsignin,mainscroll,taskdescmainview,taskdescview,txtphoto,txtvwtaskdesc,lblrepeattask,txtday,txtcity,txtpcode,txtprovince,txtvwaddress,deadlineview,deadlinemainview,bidclsdeadview,btnbusiness,btncityarrow,btndeliverychk,btnindividual,btnradiobusi,btnradioindiv,btntaskdescarrow,btntasklocationarrow,taskcompdtview,tasklocationmainview,tasklocationview,btncontractpayarrow,btndeadlinearrow,btnpayarrow,btnpaydetail,btnpricearrow,taskdesctopimg,pricemainview,priceview,tasklocationtopimg,deadlinetopimg,pricetopimg,lblprice,lbldeadline,lbltasklocation,camerabtn,addedimg,btnbidtick,btnphtick,btnvehicletick,btnestimateddayarrow,txtcontractorpay,txtperjob,txttaskname,btnperhour,btnperjob,btnradioperhour,btnradioperjob,lblcontactorpay,contratorlineimg,btndeadlineextra,btnpriceextra,btntasklocationextra,btnrepeattaskarrow,txtrepeattask,lbltaskcompletiondt,lblbiddt,lblbidmonth,lblbidtime,lblbidyr,lbltaskdt,lbltaskmonth,lbltasktime,lbltaskyr,btnbidclosedeadline,btnbidclosedeadline1,btntaskcompdt,txttime,imgtimearrow,btntime,img,img1,lbltaskdesc,lbladdress,taskdetaildic,taskfilled,btnsignup,btnrepeattaskextra,btnday,btnprovinceextra,btncontractorpayamt,btnpayamt,btnbid,btndonebyph,btnvehicle,editview,imgagreetick,btnagreetick,btnedit,myspinner,lblno,lbltaskrequire,camerabtnextra,logoimage,btnleftview,btnleftviewextra,btnlogo,headerview,deliveryview,txtdroplocation,lbldroplocation,lblpagename,btndeliveryextra,Twoview,threeView,fourView,lbltwo,lblfour,lblthree,lbltasktop;
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -62,6 +62,18 @@
     mainDic=[[NSMutableDictionary alloc]init];
     mutDic=[[NSMutableDictionary alloc]init];
    
+    Twoview.layer.borderColor = [UIColor blackColor].CGColor;
+    Twoview.layer.borderWidth = 0.5f;
+    Twoview.layer.cornerRadius=Twoview.frame.size.width/2;
+    
+    threeView.layer.borderColor = [UIColor blackColor].CGColor;
+    threeView.layer.borderWidth = 0.5f;
+    threeView.layer.cornerRadius=Twoview.frame.size.width/2;
+    
+    fourView.layer.borderColor = [UIColor blackColor].CGColor;
+    fourView.layer.borderWidth = 0.5f;
+    fourView.layer.cornerRadius=Twoview.frame.size.width/2;
+    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     userid=[prefs valueForKey:@"userid"];
     NSLog(@"userid=%@",userid);
@@ -69,9 +81,11 @@
     if (userid == nil || [userid isEqualToString:@""])
     {
         lblpagename.hidden=YES;
+      //  fourView.hidden=NO;
     }
     else
     {
+       //  fourView.hidden=YES;
        lblpagename.hidden=NO;
         btnsignup.hidden=YES;
         btnsignin.hidden=YES;
@@ -469,6 +483,15 @@
     {
         btnsignup.hidden=YES;
         [btnsignin setTitle:@"Sign Out" forState:UIControlStateNormal];
+        fourView.frame=CGRectMake(Twoview.frame.origin.x, fourView.frame.origin.y, fourView.frame.size.width, fourView.frame.size.height);
+        
+        Twoview.frame=CGRectMake(self.view.frame.origin.x+10, Twoview.frame.origin.y, Twoview.frame.size.width, Twoview.frame.size.height);
+        lbltwo.text=@"1";
+        threeView.frame=CGRectMake(Twoview.frame.origin.x+Twoview.frame.size.width+14, threeView.frame.origin.y, threeView.frame.size.width, threeView.frame.size.height);
+        lblthree.text=@"2";
+         lblno.frame=CGRectMake(lblno.frame.origin.x+30, lblno.frame.origin.y, lblno.frame.size.width, lblno.frame.size.height);
+         lbltasktop.frame=CGRectMake(lbltasktop.frame.origin.x+30, lbltasktop.frame.origin.y, lbltasktop.frame.size.width, lbltasktop.frame.size.height);
+        lbltaskrequire.frame=CGRectMake(lbltaskrequire.frame.origin.x+30, lbltaskrequire.frame.origin.y, lbltaskrequire.frame.size.width, lbltaskrequire.frame.size.height);
         lblno.text=@"3";
         lbltaskrequire.text=@"REVIEW";
         txtphoto.placeholder=@"";
@@ -3396,6 +3419,7 @@
             {
                 // you are  logged in and you posting this task for the first time
                  NSLog(@"you are  logged in and you posting this task for the first time");
+                
                 taskfilled=YES;
                 [self NewOrEditTask];
             }

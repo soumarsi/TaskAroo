@@ -13,11 +13,23 @@
 @end
 
 @implementation NewOrExistingUserViewController
-@synthesize mainscroll,btnexistinguser,btnexistinguserextra,btnlogin,btnnewuser,btnnewuserextra,signinview,signupview,txtemail,txtpassword,txtconfirmpass,txtemail1,txtfirstname,txtlang,txtlastname,txtpass,txtpcode,txtph,txtsecurityans,txtsecurityques,btnsignup,myspinner;
+@synthesize mainscroll,btnexistinguser,btnexistinguserextra,btnlogin,btnnewuser,btnnewuserextra,signinview,signupview,txtemail,txtpassword,txtconfirmpass,txtemail1,txtfirstname,txtlang,txtlastname,txtpass,txtpcode,txtph,txtsecurityans,txtsecurityques,btnsignup,myspinner,oneView,threeView,fourView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     mainscroll.contentSize=CGSizeMake(0, 1200);
+    
+    oneView.layer.borderColor = [UIColor blackColor].CGColor;
+    oneView.layer.borderWidth = 0.5f;
+    oneView.layer.cornerRadius=oneView.frame.size.width/2;
+    
+    threeView.layer.borderColor = [UIColor blackColor].CGColor;
+    threeView.layer.borderWidth = 0.5f;
+    threeView.layer.cornerRadius=threeView.frame.size.width/2;
+    
+    fourView.layer.borderColor = [UIColor blackColor].CGColor;
+    fourView.layer.borderWidth = 0.5f;
+    fourView.layer.cornerRadius=fourView.frame.size.width/2;
     
     UIGraphicsBeginImageContext(mainscroll.frame.size);
     [[UIImage imageNamed:@"bg.png"] drawInRect:mainscroll.bounds];

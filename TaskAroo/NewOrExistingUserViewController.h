@@ -38,6 +38,9 @@
 @property (weak, nonatomic) IBOutlet UIView *signupview;
 @property (weak, nonatomic) IBOutlet UITextField *txtemail;
 @property (weak, nonatomic) IBOutlet UITextField *txtpassword;
+@property (weak, nonatomic) IBOutlet UIView *oneView;
+@property (weak, nonatomic) IBOutlet UIView *threeView;
+@property (weak, nonatomic) IBOutlet UIView *fourView;
 
 //@property (weak, nonatomic) IBOutlet UITextField *txtemail;
 //@property (weak, nonatomic) IBOutlet UITextField *txtpassword;

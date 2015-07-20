@@ -263,7 +263,9 @@
             lbladditionalDetail.frame=CGRectMake(lbladditionalDetail.frame.origin.x, lbladditionalDetail.frame.origin.y, lbladditionalDetail.frame.size.width,len);
             tasktypeview.frame=CGRectMake(tasktypeview.frame.origin.x, tasktypeview.frame.origin.y, tasktypeview.frame.size.width,tasktypeview.frame.size.height+len-21);
             MapView.frame=CGRectMake(MapView.frame.origin.x, tasktypeview.frame.origin.y+tasktypeview.frame.size.height+2, MapView.frame.size.width, MapView.frame.size.height);
-            mainscroll.contentSize = CGSizeMake(0, mainscroll.contentSize.height+len-21);
+        //    NSLog(@"mainscroll height=%f",mainscroll.contentSize.height);
+          //  mainscroll.contentSize = CGSizeMake(0, mainscroll.contentSize.height+len-21);
+             mainscroll.contentSize = CGSizeMake(0, 1060+len-21);
             lbladditionalDetail.text=adddetail;
          //   NSLog(@"additional detail=%d",len);
         }
@@ -291,7 +293,15 @@
        str = [@[[taskdic valueForKey:@"location"], [taskdic valueForKey:@"city"], [taskdic valueForKey:@"state"],[taskdic valueForKey:@"zipcode"]] componentsJoinedByString:@" ,"];
         }
         lbllocation.text=str;
-        lblamt.text=[@"$ " stringByAppendingString:[taskdic valueForKey:@"pay_for_task"]];
+        if (timetype==1)
+        {
+            lblamt.text=[NSString stringWithFormat:@"%@ %@ %@",@"$ ",[taskdic valueForKey:@"pay_for_task"],@" / hr"];
+        }
+        else if (timetype==0)
+        {
+            lblamt.text=[NSString stringWithFormat:@"%@ %@ %@",@"$ ",[taskdic valueForKey:@"pay_for_task"],@" / job"];
+        }
+     //   lblamt.text=[@"$ " stringByAppendingString:[taskdic valueForKey:@"pay_for_task"]];
          lblrepeattask.text=[[taskdic valueForKey:@"repeated_task"] stringByAppendingString:@" Weeks"];
         NSString *str1;
         if([[taskdic valueForKey:@"estimate_day"] isEqualToString:@"0"])
@@ -729,7 +739,7 @@
            cell.lblpropose.text = [[ArrAllBids objectAtIndex:indexPath.row] valueForKey:@"proposal"];
          cell.lblamt.text =[@"$" stringByAppendingString:[[ArrAllBids objectAtIndex:indexPath.row] valueForKey:@"bidded_amount"]];
            NSString *time = [[ArrAllBids objectAtIndex:indexPath.row] valueForKey:@"completion_time"];
-        if (timetype==1)
+        if (timetype==1)// per hour
         {
             if ([time integerValue]>=24)
             {
@@ -753,6 +763,7 @@
         }
         else
         {
+            //per job
             if([time isEqualToString:@"1"])
             {
             cell.lbltime.text=[time stringByAppendingString:@" day"];
