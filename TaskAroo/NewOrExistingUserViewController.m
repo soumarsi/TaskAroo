@@ -376,6 +376,7 @@
         
         MyHomeViewController *obj=[self.storyboard instantiateViewControllerWithIdentifier:@"MyHomeViewControllersid"];
         obj.taskfilled=YES;
+        obj.fromNewOrExisting=YES;
     /*    if (tasktosignin==YES)
         {
             obj.taskfilled=YES;
@@ -415,6 +416,7 @@
             [[NSUserDefaults standardUserDefaults] setObject:[mainDic valueForKey:@"smalluserimage"]  forKey:@"smalluserimage"];
             MyHomeViewController *obj=[self.storyboard instantiateViewControllerWithIdentifier:@"MyHomeViewControllersid"];
               obj.taskfilled=YES;
+            obj.fromNewOrExisting=YES;
       /*      if (tasktosignup==YES)
             {
                 obj.taskfilled=YES;

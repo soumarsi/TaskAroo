@@ -17,7 +17,7 @@
 @end
 
 @implementation MyHomeViewController
-@synthesize btnsignin,mainscroll,taskdescmainview,taskdescview,txtphoto,txtvwtaskdesc,lblrepeattask,txtday,txtcity,txtpcode,txtprovince,txtvwaddress,deadlineview,deadlinemainview,bidclsdeadview,btnbusiness,btncityarrow,btndeliverychk,btnindividual,btnradiobusi,btnradioindiv,btntaskdescarrow,btntasklocationarrow,taskcompdtview,tasklocationmainview,tasklocationview,btncontractpayarrow,btndeadlinearrow,btnpayarrow,btnpaydetail,btnpricearrow,taskdesctopimg,pricemainview,priceview,tasklocationtopimg,deadlinetopimg,pricetopimg,lblprice,lbldeadline,lbltasklocation,camerabtn,addedimg,btnbidtick,btnphtick,btnvehicletick,btnestimateddayarrow,txtcontractorpay,txtperjob,txttaskname,btnperhour,btnperjob,btnradioperhour,btnradioperjob,lblcontactorpay,contratorlineimg,btndeadlineextra,btnpriceextra,btntasklocationextra,btnrepeattaskarrow,txtrepeattask,lbltaskcompletiondt,lblbiddt,lblbidmonth,lblbidtime,lblbidyr,lbltaskdt,lbltaskmonth,lbltasktime,lbltaskyr,btnbidclosedeadline,btnbidclosedeadline1,btntaskcompdt,txttime,imgtimearrow,btntime,img,img1,lbltaskdesc,lbladdress,taskdetaildic,taskfilled,btnsignup,btnrepeattaskextra,btnday,btnprovinceextra,btncontractorpayamt,btnpayamt,btnbid,btndonebyph,btnvehicle,editview,imgagreetick,btnagreetick,btnedit,myspinner,lblno,lbltaskrequire,camerabtnextra,logoimage,btnleftview,btnleftviewextra,btnlogo,headerview,deliveryview,txtdroplocation,lbldroplocation,lblpagename,btndeliveryextra,Twoview,threeView,fourView,lbltwo,lblfour,lblthree,lbltasktop;
+@synthesize btnsignin,mainscroll,taskdescmainview,taskdescview,txtphoto,txtvwtaskdesc,lblrepeattask,txtday,txtcity,txtpcode,txtprovince,txtvwaddress,deadlineview,deadlinemainview,bidclsdeadview,btnbusiness,btncityarrow,btndeliverychk,btnindividual,btnradiobusi,btnradioindiv,btntaskdescarrow,btntasklocationarrow,taskcompdtview,tasklocationmainview,tasklocationview,btncontractpayarrow,btndeadlinearrow,btnpayarrow,btnpaydetail,btnpricearrow,taskdesctopimg,pricemainview,priceview,tasklocationtopimg,deadlinetopimg,pricetopimg,lblprice,lbldeadline,lbltasklocation,camerabtn,addedimg,btnbidtick,btnphtick,btnvehicletick,btnestimateddayarrow,txtcontractorpay,txtperjob,txttaskname,btnperhour,btnperjob,btnradioperhour,btnradioperjob,lblcontactorpay,contratorlineimg,btndeadlineextra,btnpriceextra,btntasklocationextra,btnrepeattaskarrow,txtrepeattask,lbltaskcompletiondt,lblbiddt,lblbidmonth,lblbidtime,lblbidyr,lbltaskdt,lbltaskmonth,lbltasktime,lbltaskyr,btnbidclosedeadline,btnbidclosedeadline1,btntaskcompdt,txttime,imgtimearrow,btntime,img,img1,lbltaskdesc,lbladdress,taskdetaildic,taskfilled,btnsignup,btnrepeattaskextra,btnday,btnprovinceextra,btncontractorpayamt,btnpayamt,btnbid,btndonebyph,btnvehicle,editview,imgagreetick,btnagreetick,btnedit,myspinner,lblno,lbltaskrequire,camerabtnextra,logoimage,btnleftview,btnleftviewextra,btnlogo,headerview,deliveryview,txtdroplocation,lbldroplocation,lblpagename,btndeliveryextra,Twoview,threeView,fourView,lbltwo,lblfour,lblthree,lbltasktop,TaskRequirementView,taskreviewView,OneView,threeViewReview,fromNewOrExisting,taskreview3View,fourviewReview,OneViewReview,TwoViewReview;
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -74,6 +74,26 @@
     fourView.layer.borderWidth = 0.5f;
     fourView.layer.cornerRadius=Twoview.frame.size.width/2;
     
+    OneView.layer.borderColor = [UIColor blackColor].CGColor;
+    OneView.layer.borderWidth = 0.5f;
+    OneView.layer.cornerRadius=OneView.frame.size.width/2;
+    
+    threeViewReview.layer.borderColor = [UIColor blackColor].CGColor;
+    threeViewReview.layer.borderWidth = 0.5f;
+    threeViewReview.layer.cornerRadius=threeViewReview.frame.size.width/2;
+    
+    fourviewReview.layer.borderColor = [UIColor blackColor].CGColor;
+    fourviewReview.layer.borderWidth = 0.5f;
+    fourviewReview.layer.cornerRadius=fourviewReview.frame.size.width/2;
+    
+    OneViewReview.layer.borderColor = [UIColor blackColor].CGColor;
+    OneViewReview.layer.borderWidth = 0.5f;
+    OneViewReview.layer.cornerRadius=OneViewReview.frame.size.width/2;
+    
+    TwoViewReview.layer.borderColor = [UIColor blackColor].CGColor;
+    TwoViewReview.layer.borderWidth = 0.5f;
+    TwoViewReview.layer.cornerRadius=TwoViewReview.frame.size.width/2;
+    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     userid=[prefs valueForKey:@"userid"];
     NSLog(@"userid=%@",userid);
@@ -81,11 +101,13 @@
     if (userid == nil || [userid isEqualToString:@""])
     {
         lblpagename.hidden=YES;
-      //  fourView.hidden=NO;
+      
+        
+       
     }
     else
     {
-       //  fourView.hidden=YES;
+       
        lblpagename.hidden=NO;
         btnsignup.hidden=YES;
         btnsignin.hidden=YES;
@@ -474,17 +496,133 @@
     {
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         txttaskname.text=[prefs valueForKey:@"taskname"];
-        lblno.text=@"1";
-        lbltaskrequire.text=@"REQUIREMENT";
-
+      //  lblno.text=@"1";
+      //  lbltaskrequire.text=@"REQUIREMENT";
+        
+        //task header requirement head
+        if (userid == nil || [userid isEqualToString:@""])
+        {
+           //4 steps---1.requirement 2. login 3. review 4. payment --now requirement
+            taskreview3View.hidden=YES;
+            taskreviewView.hidden=YES;
+            TaskRequirementView.hidden=NO;
+            TaskRequirementView.frame=CGRectMake(TaskRequirementView.frame.origin.x
+                                                 , 0, TaskRequirementView.frame.size.width, TaskRequirementView.frame.size.height);
+            
+        }
+        else
+        {
+            
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            NSString *paystatus=[prefs valueForKey:@"paymentstatus"];
+            if ([paystatus isEqualToString:@"1"])
+            {
+                //2 steps  1.requirement 2.  review --now requirement
+                taskreview3View.hidden=YES;
+                taskreviewView.hidden=YES;
+                TaskRequirementView.hidden=NO;
+                TaskRequirementView.frame=CGRectMake(TaskRequirementView.frame.origin.x
+                                                     , 0, TaskRequirementView.frame.size.width, TaskRequirementView.frame.size.height);
+                threeView.hidden=YES;
+                fourView.hidden=YES;
+            }
+            else if ([paystatus isEqualToString:@"0"])
+            {
+                //3 steps  1.requirement 2. review 3. payment --now requirement
+                taskreview3View.hidden=YES;
+                taskreviewView.hidden=YES;
+                TaskRequirementView.hidden=NO;
+                TaskRequirementView.frame=CGRectMake(TaskRequirementView.frame.origin.x
+                                                     , 0, TaskRequirementView.frame.size.width, TaskRequirementView.frame.size.height);
+                fourView.hidden=YES;
+                
+            }
+        }
+        
         [self deleteDocDirectory];
     }
     else if (taskfilled==YES)
     {
+        //task header review head
+        if (userid == nil || [userid isEqualToString:@""])
+        {
+            //never be this branch because if task is filled, it already signed in
+            
+            
+        }
+        else
+        {
+            if (fromNewOrExisting==YES)
+            {
+                NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+                NSString *paystatus=[prefs valueForKey:@"paymentstatus"];
+                if ([paystatus isEqualToString:@"1"])
+                {
+                    //2 steps  1.requirement 2. review --now review
+                    taskreviewView.hidden=YES;
+                    TaskRequirementView.hidden=YES;
+                    taskreview3View.hidden=NO;
+                    taskreview3View.frame=CGRectMake(taskreview3View.frame.origin.x
+                                                     , 0, taskreview3View.frame.size.width, taskreview3View.frame.size.height);
+                   fourviewReview.hidden=YES;
+                }
+                else if ([paystatus isEqualToString:@"0"])
+                {
+                     //4 steps  1.requirement 2. login 3. review 4. payment --now review
+                    NSLog(@"payment status=%@",paystatus);
+                    
+                    taskreviewView.hidden=YES;
+                    TaskRequirementView.hidden=YES;
+                    taskreview3View.hidden=NO;
+                    taskreview3View.frame=CGRectMake(taskreview3View.frame.origin.x
+                                                    , 0, taskreview3View.frame.size.width, taskreview3View.frame.size.height);
+                    fourviewReview.hidden=NO;
+                }
+            }
+            else
+            {
+                NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+                NSString *paystatus=[prefs valueForKey:@"paymentstatus"];
+                if ([paystatus isEqualToString:@"1"])
+                {
+                   //2 steps  1.requirement 2. review  --now review
+                   taskreview3View.hidden=YES;
+                    taskreviewView.hidden=NO;
+                    TaskRequirementView.hidden=YES;
+                    taskreviewView.frame=CGRectMake(taskreviewView.frame.origin.x
+                                                    , 0, taskreviewView.frame.size.width, taskreviewView.frame.size.height);
+                    threeViewReview.hidden=YES;
+                }
+                else if ([paystatus isEqualToString:@"0"])
+                {
+                    NSLog(@"payment status=%@",paystatus);
+                    //3 steps  1.requirement 2.  review 3. payment --now review
+                    taskreview3View.hidden=YES;
+                    taskreviewView.hidden=NO;
+                    TaskRequirementView.hidden=YES;
+                    taskreviewView.frame=CGRectMake(taskreviewView.frame.origin.x
+                                                    , 0, taskreviewView.frame.size.width, taskreviewView.frame.size.height);
+                    threeViewReview.hidden=NO;
+                }
+
+            }
+            
+        }
+        
         btnsignup.hidden=YES;
         [btnsignin setTitle:@"Sign Out" forState:UIControlStateNormal];
-        fourView.frame=CGRectMake(Twoview.frame.origin.x, fourView.frame.origin.y, fourView.frame.size.width, fourView.frame.size.height);
         
+        /*
+        fourView.frame=CGRectMake(Twoview.frame.origin.x, fourView.frame.origin.y, fourView.frame.size.width, fourView.frame.size.height);
+         NSUserDefaults *prefs1 = [NSUserDefaults standardUserDefaults];
+        if ([[prefs1 valueForKey:@"paymentstatus"] isEqualToString:@"1"])
+        {
+            threeView.hidden=YES;
+        }
+        else
+        {
+            threeView.hidden=NO;
+        }
         Twoview.frame=CGRectMake(self.view.frame.origin.x+10, Twoview.frame.origin.y, Twoview.frame.size.width, Twoview.frame.size.height);
         lbltwo.text=@"1";
         threeView.frame=CGRectMake(Twoview.frame.origin.x+Twoview.frame.size.width+14, threeView.frame.origin.y, threeView.frame.size.width, threeView.frame.size.height);
@@ -494,6 +632,7 @@
         lbltaskrequire.frame=CGRectMake(lbltaskrequire.frame.origin.x+30, lbltaskrequire.frame.origin.y, lbltaskrequire.frame.size.width, lbltaskrequire.frame.size.height);
         lblno.text=@"3";
         lbltaskrequire.text=@"REVIEW";
+         */
         txtphoto.placeholder=@"";
         
         //fetch task value from user default
@@ -4155,59 +4294,7 @@
         }
         
         
-  /*
-        
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        
-        [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-        
-        [request setHTTPShouldHandleCookies:NO];
-        
-        [request setURL:[NSURL URLWithString:parameter]];
-        
-        [request setTimeoutInterval:100];
-        
-        [request setHTTPMethod:@"POST"];
-        
-        NSData *imageData = UIImagePNGRepresentation(addimage1);
-        
-        NSLog(@"imagedata--- %@--- %@-- %@",addimage1,imageData,imageData2);
-        if ([imageData length] > 0)
-            //   if (pic_send ==1)
-        {
-            NSString *boundary = [NSString stringWithFormat:@"%0.9u",arc4random()];
-            
-            NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-            
-            [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
-            
-            NSMutableData *body = [NSMutableData data];
-            
-            [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-            
-            [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"photo\"; filename=\".jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-            
-            [body appendData:[[NSString stringWithFormat:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-            
-            [body appendData:[NSData dataWithData:UIImageJPEGRepresentation(addimage1, 1)]];
-            
-            [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-            
-            [request setHTTPBody:body];
-        }
-        
-        
-        NSURLResponse *response = nil;
-        NSError *error;
-        NSData *returnData1 = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        
-        mainDic=[[NSMutableDictionary alloc]init];
-        mainDic=[NSJSONSerialization JSONObjectWithData:returnData1 options:kNilOptions error:&error];
-        
-        
-        NSLog(@"--- %@", mainDic);
-        
-        */
+  
         
     }];
     

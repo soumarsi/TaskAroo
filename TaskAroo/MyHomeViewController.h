@@ -43,6 +43,18 @@
     UIImage *addimage1;
     NSString *userid;
 }
+@property (weak, nonatomic) IBOutlet UIView *TaskRequirementView;
+@property (weak, nonatomic) IBOutlet UIView *taskreviewView;
+@property (weak, nonatomic) IBOutlet UIView *OneView;
+@property (weak, nonatomic) IBOutlet UIView *taskreview3View;
+
+@property (weak, nonatomic) IBOutlet UIView *threeViewReview;
+
+@property (weak, nonatomic) IBOutlet UIView *fourviewReview;
+@property (weak, nonatomic) IBOutlet UIView *OneViewReview;
+@property (weak, nonatomic) IBOutlet UIView *TwoViewReview;
+
+
 @property (weak, nonatomic) IBOutlet UIImageView *logoimage;
 @property (weak, nonatomic) IBOutlet UIButton *btnleftview;
 @property (weak, nonatomic) IBOutlet UIButton *btnleftviewextra;
@@ -252,4 +264,5 @@
 
 @property (strong, nonatomic) NSMutableDictionary *taskdetaildic;
 @property (assign, nonatomic) BOOL taskfilled;
+@property (assign, nonatomic) BOOL fromNewOrExisting;
 @end

@@ -805,7 +805,7 @@
 				TargetAttributes = {
 					5B59BB711AC408FC00650ECC = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = HVFEBCENV9;
+						DevelopmentTeam = K22GQFS8BW;
 					};
 					5B59BB8A1AC408FC00650ECC = {
 						CreatedOnToolsVersion = 6.1;
@@ -1027,8 +1027,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ESolz Technologies Pvt Ltd (K22GQFS8BW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ESolz Technologies Pvt Ltd (K22GQFS8BW)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1048,6 +1048,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "e9d79b13-079b-442d-8b41-e249705ceaf8";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1069,8 +1070,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ESolz Technologies Pvt Ltd (K22GQFS8BW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ESolz Technologies Pvt Ltd (K22GQFS8BW)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1083,6 +1084,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "e9d79b13-079b-442d-8b41-e249705ceaf8";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1092,7 +1094,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: hih7 webtech pvt ltd (HVFEBCENV9)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ESolz Technologies Pvt Ltd (K22GQFS8BW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ESolz Technologies Pvt Ltd (K22GQFS8BW)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TaskAroo",
@@ -1108,7 +1111,7 @@
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "90e12dbf-69db-484a-9f83-fd980d83cf46";
+				PROVISIONING_PROFILE = "e9d79b13-079b-442d-8b41-e249705ceaf8";
 			};
 			name = Debug;
 		};
@@ -1116,7 +1119,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: hih7 webtech pvt ltd (HVFEBCENV9)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ESolz Technologies Pvt Ltd (K22GQFS8BW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ESolz Technologies Pvt Ltd (K22GQFS8BW)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TaskAroo",
@@ -1132,7 +1136,7 @@
 				);
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "90e12dbf-69db-484a-9f83-fd980d83cf46";
+				PROVISIONING_PROFILE = "e9d79b13-079b-442d-8b41-e249705ceaf8";
 			};
 			name = Release;
 		};
