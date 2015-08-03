@@ -356,7 +356,7 @@ mainview.center = CGPointMake([[UIScreen mainScreen] bounds].size.width+60,self.
 -(void)activetaskurl:(NSInteger )number :(NSInteger)pg
 {
     @try {
-        NSString *str=[NSString stringWithFormat:@"%@tasklist_ios?userid=%@&orderby=task_title&ordertype=asc&limit=%ld&task=active&page=%ld",URL_LINK,[userid stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],(long)number,(long)pg];
+        NSString *str=[NSString stringWithFormat:@"%@tasklist_ios?userid=%@&orderby=id&ordertype=desc&limit=%ld&task=active&page=%ld",URL_LINK,[userid stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],(long)number,(long)pg];
         NSLog(@"str=%@",str);
         BOOL net=[urlobj connectedToNetwork];
         if (net==YES) {
@@ -413,7 +413,7 @@ mainview.center = CGPointMake([[UIScreen mainScreen] bounds].size.width+60,self.
 -(void)completetaskurl:(NSInteger )number :(NSInteger)pg
 {
     @try {
-        NSString *str=[NSString stringWithFormat:@"%@tasklist_ios?userid=%@&page=%ld&orderby=task_title&ordertype=asc&limit=%ld&task=complete",URL_LINK,[userid stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],(long)pg,(long)number];
+        NSString *str=[NSString stringWithFormat:@"%@tasklist_ios?userid=%@&page=%ld&orderby=id&ordertype=desc&limit=%ld&task=complete",URL_LINK,[userid stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],(long)pg,(long)number];
         NSLog(@"str=%@",str);
         BOOL net=[urlobj connectedToNetwork];
         if (net==YES) {

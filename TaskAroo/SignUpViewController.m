@@ -216,25 +216,7 @@
 
 - (IBAction)btnchkextraclk:(id)sender
 {
-    /*
-    if([btnchk.currentImage isEqual:[UIImage imageNamed:@"check.png"]])
-    {
-        [btnchk setImage:[UIImage imageNamed:@"uncheck.png"]
-                forState:UIControlStateNormal];
-    }
-    else{
-        [btnchk setImage:[UIImage imageNamed:@"check.png"]
-                forState:UIControlStateNormal];
-    }
-     */
-  
-    
- ///   [UIView animateWithDuration:0.9 animations:^{
-        
-        
-  //  } completion:^(BOOL finished) {
-        
-    //   tm=[[TermsView alloc]initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width,self.view.frame.size.height)];
+   /*
     screenview=[[UIView alloc]init];
     [screenview setFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height)];
     screenview.backgroundColor=[[UIColor blackColor]colorWithAlphaComponent:0.65];
@@ -247,9 +229,31 @@
 
     
     NSLog(@"testing width.....%f,%f",[UIScreen mainScreen].bounds.size.width,tm.frame.size.width);
-        
-        
-    //}];
+       */
+    screenview=[[UIView alloc]init];
+    [screenview setFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height)];
+  //  screenview.backgroundColor=[[UIColor blackColor]colorWithAlphaComponent:0.65];
+     screenview.backgroundColor=[UIColor whiteColor];
+    [self.view addSubview:screenview];
+    
+  UIButton *btnWebback=[[UIButton alloc] initWithFrame:CGRectMake(0, 10, 50, 50)];
+    [btnWebback setImage:[UIImage imageNamed:@"pb_back"] forState:UIControlStateNormal];
+    btnWebback.backgroundColor = [UIColor clearColor];
+  //  [btnWebback setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal ];
+ //   btnWebback.titleLabel.font = [UIFont fontWithName:@"OpenSans-Semibold" size:14.0];
+    [btnWebback addTarget:self action:@selector(webBackClick) forControlEvents:UIControlEventTouchUpInside];
+    [screenview addSubview:btnWebback];
+    
+    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 50, screenview.frame.size.width,screenview.frame.size.height)];
+    NSString *url=@"http://www.esolz.co.in/lab3/taskaroo/index.php/terms/index";
+    NSURL *nsurl=[NSURL URLWithString:url];
+    NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
+    [webview loadRequest:nsrequest];
+    [screenview addSubview:webview];
+}
+-(void)webBackClick
+{
+    [screenview removeFromSuperview];
 }
 - (IBAction)signuppressed:(id)sender
 {

@@ -1249,7 +1249,7 @@
     screenview.backgroundColor=[[UIColor blackColor]colorWithAlphaComponent:0.65];
     [self.view addSubview:screenview];
     
-    UIButton *btnmesgcancel=[[UIButton alloc] initWithFrame:CGRectMake(280,60, 20, 20)];
+    UIButton *btnmesgcancel=[[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width-35,60, 20, 20)];
     [btnmesgcancel setBackgroundImage:[UIImage imageNamed:@"cross"] forState:UIControlStateNormal];
     btnmesgcancel.backgroundColor = [UIColor clearColor];
     [btnmesgcancel setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal ];

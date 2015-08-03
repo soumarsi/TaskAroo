@@ -3663,17 +3663,6 @@
 - (IBAction)agreetickclk:(id)sender
 {
    /*
-    if (btnagreetick.selected==NO)
-    {
-        btnagreetick.selected=YES;
-        imgagreetick.image=[UIImage imageNamed:@"tick1"];
-    }
-    else if (btnagreetick.selected==YES)
-    {
-        btnagreetick.selected=NO;
-        imgagreetick.image=[UIImage imageNamed:@"tick2"];
-    }
-    */
     screenview=[[UIView alloc]init];
     [screenview setFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height)];
     screenview.backgroundColor=[[UIColor blackColor]colorWithAlphaComponent:0.65];
@@ -3681,8 +3670,32 @@
      tm=[[TermsView alloc]init];
     [tm setFrame:CGRectMake(self.view.frame.origin.x+50,self.view.frame.origin.y+27, [UIScreen mainScreen].bounds.size.width-100,[UIScreen mainScreen].bounds.size.height-170)];
     [screenview addSubview:tm];
+    */
+    screenview=[[UIView alloc]init];
+    [screenview setFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height)];
+    //  screenview.backgroundColor=[[UIColor blackColor]colorWithAlphaComponent:0.65];
+    screenview.backgroundColor=[UIColor whiteColor];
+    [self.view addSubview:screenview];
+    
+    UIButton *btnWebback=[[UIButton alloc] initWithFrame:CGRectMake(0, 10, 50, 50)];
+    [btnWebback setImage:[UIImage imageNamed:@"pb_back"] forState:UIControlStateNormal];
+    btnWebback.backgroundColor = [UIColor clearColor];
+    //  [btnWebback setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal ];
+    //   btnWebback.titleLabel.font = [UIFont fontWithName:@"OpenSans-Semibold" size:14.0];
+    [btnWebback addTarget:self action:@selector(webBackClick) forControlEvents:UIControlEventTouchUpInside];
+    [screenview addSubview:btnWebback];
+    
+    UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, 50, screenview.frame.size.width,screenview.frame.size.height)];
+    NSString *url=@"http://www.esolz.co.in/lab3/taskaroo/index.php/terms/index";
+    NSURL *nsurl=[NSURL URLWithString:url];
+    NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
+    [webview loadRequest:nsrequest];
+    [screenview addSubview:webview];
 }
-
+-(void)webBackClick
+{
+    [screenview removeFromSuperview];
+}
 - (IBAction)agreeextratickclk:(id)sender
 {
     if (btnagreetick.selected==NO)
@@ -4124,7 +4137,7 @@
         NSData *imageData1 = UIImagePNGRepresentation(img.image);
         NSData *imageData2 = UIImagePNGRepresentation(img1.image);
         
-        NSLog(@"image data=%@",imageData);
+    //    NSLog(@"image data=%@",imageData);
         
         if ([imageData length] > 0)
         {
