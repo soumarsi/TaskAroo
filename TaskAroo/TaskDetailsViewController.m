@@ -219,13 +219,13 @@
     //    NSLog(@"task details=%@",taskdic);
         lbltasktitle.text=[taskdic valueForKey:@"task_title"];
          lbltaskcode.text=[taskdic valueForKey:@"task_code"];
-        if([[taskdic valueForKey:@"user_type"] isEqualToString:@"1"])
+        if([[taskdic valueForKey:@"i_am"] isEqualToString:@"0"])
         {
             lblusertype.text=@"I am an individual";
         }
-        else if([[taskdic valueForKey:@"user_type"] isEqualToString:@"2"])
+        else if([[taskdic valueForKey:@"i_am"] isEqualToString:@"1"])
         {
-            lblusertype.text=@"I am an Business";
+            lblusertype.text=@"I am a Business";
         }
         lbltaskcreatedt.text=[taskdic valueForKey:@"added_date"];
          lblbidenddt.text=[taskdic valueForKey:@"bid_close_deadline"];
@@ -272,25 +272,25 @@
     //    NSArray *myStrings = [[NSArray alloc] initWithObjects:[taskdic valueForKey:@"location"], [taskdic valueForKey:@"city"], [taskdic valueForKey:@"state"], [taskdic valueForKey:@"zipcode"], nil];
     //    NSString *joinedString = [myStrings componentsJoinedByString:@","];
         NSString *str;
-        if([[taskdic valueForKey:@"location"] isEqualToString:@""])
+        if([[taskdic valueForKey:@"address"] isEqualToString:@""])
         {
            str = [@[[taskdic valueForKey:@"city"], [taskdic valueForKey:@"state"],[taskdic valueForKey:@"zipcode"]] componentsJoinedByString:@","];
         }
         else if ([[taskdic valueForKey:@"city"] isEqualToString:@""])
         {
-          str = [@[[taskdic valueForKey:@"location"], [taskdic valueForKey:@"state"],[taskdic valueForKey:@"zipcode"]] componentsJoinedByString:@","];
+          str = [@[[taskdic valueForKey:@"address"], [taskdic valueForKey:@"state"],[taskdic valueForKey:@"zipcode"]] componentsJoinedByString:@","];
         }
         else if ([[taskdic valueForKey:@"state"] isEqualToString:@""])
         {
-            str = [@[[taskdic valueForKey:@"location"], [taskdic valueForKey:@"city"],[taskdic valueForKey:@"zipcode"]] componentsJoinedByString:@","];
+            str = [@[[taskdic valueForKey:@"address"], [taskdic valueForKey:@"city"],[taskdic valueForKey:@"zipcode"]] componentsJoinedByString:@","];
         }
         else if ([[taskdic valueForKey:@"zipcode"] isEqualToString:@""])
         {
-            str = [@[[taskdic valueForKey:@"location"], [taskdic valueForKey:@"state"],[taskdic valueForKey:@"city"]] componentsJoinedByString:@","];
+            str = [@[[taskdic valueForKey:@"address"], [taskdic valueForKey:@"state"],[taskdic valueForKey:@"city"]] componentsJoinedByString:@","];
         }
         else
         {
-       str = [@[[taskdic valueForKey:@"location"], [taskdic valueForKey:@"city"], [taskdic valueForKey:@"state"],[taskdic valueForKey:@"zipcode"]] componentsJoinedByString:@" ,"];
+       str = [@[[taskdic valueForKey:@"address"], [taskdic valueForKey:@"city"], [taskdic valueForKey:@"state"],[taskdic valueForKey:@"zipcode"]] componentsJoinedByString:@" ,"];
         }
         lbllocation.text=str;
         if (timetype==1)
