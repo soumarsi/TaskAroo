@@ -107,12 +107,11 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     userid=[prefs valueForKey:@"userid"];
     Arrmesg=[[NSMutableArray alloc]init];
-     ArrRecieverId=[[NSMutableArray alloc]init];
+    
+    ArrRecieverId1=[[NSMutableArray alloc]init];
     ArrAllBids=[[NSMutableArray alloc]init];
     ArrBigImg=[[NSMutableArray alloc]init];
- //   Arrmesg=[[NSMutableArray alloc]initWithObjects:@"The user interface is built around the device's multi-touch screen, including a virtual keyboard. The iPhone has Wi-Fi and can connect to many cellular networks, including 1xRTT (represented by a 1x on the status bar) and GPRS (shown as GPRS on the status bar), EDGE (shown as a capital E on the status bar), UMTS and EV-DO (shown as 3G), a faster version of UMTS and 4G (shown as a 4G symbol on the status bar), and LTE (shown as LTE on the status bar).[15] An iPhone can shoot video (though this was not a standard feature until the iPhone 3GS), take photos, play music, send and receive email, browse the web, send texts, GPS navigation, record notes, do mathematical calculations, and receive visual voicemail.[16] Other functions—video games, reference works, social networking, etc.—can be enabled by downloading application programs (‘apps’); as of October 2013, the App Store offered more than one million apps by Apple and third parties[17] and is ranked as the world's second largest mobile software distribution network of its kind (by number of currently available applications)",@"rdtghvhghh ffggcgg",@"Once the installation is complete, follow these simple instructions to . Add a corresponding property to the Task Details screen in the Application Layer.", nil];
-  //  lblusertype.layer.borderColor = [UIColor blackColor].CGColor;
-  //  lblusertype.layer.borderWidth = 0.30;
+ 
 }
 -(void)taskbuttonTapped:(id)sender
 {
@@ -219,11 +218,11 @@
     //    NSLog(@"task details=%@",taskdic);
         lbltasktitle.text=[taskdic valueForKey:@"task_title"];
          lbltaskcode.text=[taskdic valueForKey:@"task_code"];
-        if([[taskdic valueForKey:@"i_am"] isEqualToString:@"0"])
+        if([[taskdic valueForKey:@"i_am"] isEqualToString:@"1"])
         {
             lblusertype.text=@"I am an individual";
         }
-        else if([[taskdic valueForKey:@"i_am"] isEqualToString:@"1"])
+        else if([[taskdic valueForKey:@"i_am"] isEqualToString:@"2"])
         {
             lblusertype.text=@"I am a Business";
         }
@@ -663,7 +662,37 @@
                         {
                             [Arrmesg addObject:tempDict];
                             
+                            
+                            
                         }
+                        
+                        [ArrRecieverId1 removeAllObjects];
+                        ArrRecieverId=[[NSArray alloc]init];
+                        if (IsAwarded==0)
+                        {
+                            for (int i=0; i<Arrmesg.count; i++)
+                            {
+                                if (![[[Arrmesg objectAtIndex:i] valueForKey:@"message_sender_id"] isEqualToString:userid])
+                                {
+                                    
+                                    [ArrRecieverId1 addObject:[[Arrmesg objectAtIndex:i] valueForKey:@"message_sender_id"]];
+                                    
+                                    
+                                }
+                                else
+                                {
+                                    
+                                }
+                            }
+                        }
+                        else if (IsAwarded==1)
+                        {
+                            
+                        }
+                        ArrRecieverId = [[NSOrderedSet orderedSetWithArray:ArrRecieverId1] array];
+                        NSLog(@"array rec id=%@",ArrRecieverId);
+                        
+                        
                    //    NSLog(@"result=%@",Arrmesg);
                         [tblmesg reloadData];
                     }
@@ -868,28 +897,28 @@
        }
        
        
-       if (IsAwarded==0)
-       {
-           //bidder id
-       //    NSLog(@" bidder id=%@",[[Arrmesg objectAtIndex:indexPath.row] valueForKey:@"message_sender_id"]);
-           
-           //you have to scroll to the end
-           if (![[[Arrmesg objectAtIndex:indexPath.row] valueForKey:@"message_sender_id"] isEqualToString:userid])
-           {
-          //     NSLog(@" rec id=%@",[[Arrmesg objectAtIndex:indexPath.row] valueForKey:@"message_sender_id"]);
-               [ArrRecieverId addObject:[[Arrmesg objectAtIndex:indexPath.row] valueForKey:@"message_sender_id"]];
-               NSLog(@"array rec id=%@",ArrRecieverId);
-               
-           }
-           else
-           {
-               
-           }
-       }
-       else if (IsAwarded==1)
-       {
-           
-       }
+//       if (IsAwarded==0)
+//       {
+//           //bidder id
+//       //    NSLog(@" bidder id=%@",[[Arrmesg objectAtIndex:indexPath.row] valueForKey:@"message_sender_id"]);
+//           
+//           //you have to scroll to the end
+//           if (![[[Arrmesg objectAtIndex:indexPath.row] valueForKey:@"message_sender_id"] isEqualToString:userid])
+//           {
+//          //     NSLog(@" rec id=%@",[[Arrmesg objectAtIndex:indexPath.row] valueForKey:@"message_sender_id"]);
+//               [ArrRecieverId addObject:[[Arrmesg objectAtIndex:indexPath.row] valueForKey:@"message_sender_id"]];
+//               NSLog(@"array rec id=%@",ArrRecieverId);
+//               
+//           }
+//           else
+//           {
+//               
+//           }
+//       }
+//       else if (IsAwarded==1)
+//       {
+//           
+//       }
        cell.btnattachment.frame=CGRectMake(cell.btnattachment.frame.origin.x, cell.lblmesg.frame.origin.y+(21*rw)+2, cell.btnattachment.frame.size.width,cell.btnattachment.frame.size.height);
       
        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];

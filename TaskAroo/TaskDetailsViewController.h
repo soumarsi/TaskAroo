@@ -36,7 +36,8 @@
     NSString *userid,*recieverid,*taskposterid,*bidid,*biderid,*AwardedTo;
     
     NSString *cellId;
-   NSMutableArray *Arrmesg,*ArrRecieverId,*ArrAllBids,*ArrBigImg;
+   NSMutableArray *Arrmesg,*ArrAllBids,*ArrBigImg,*ArrRecieverId1;
+    NSArray *ArrRecieverId;
     MesgSubmitView *mesgview;
     UIView *screenview,*loader_shadow_View,*screenview1;
     UIButton *btncancel;
