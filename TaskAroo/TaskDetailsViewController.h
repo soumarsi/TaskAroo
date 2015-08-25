@@ -55,6 +55,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbltaskenddt;
 @property (weak, nonatomic) IBOutlet UILabel *lbllocation;
 @property (weak, nonatomic) IBOutlet UILabel *lblamt;
+@property (weak, nonatomic) IBOutlet UILabel *lblContractorSpend;
+
 @property (weak, nonatomic) IBOutlet UIView *tasktypeview;
 @property (weak, nonatomic) IBOutlet UILabel *lblimage;
 @property (weak, nonatomic) IBOutlet UITableView *tblmesg;

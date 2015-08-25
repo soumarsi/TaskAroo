@@ -15,7 +15,7 @@
 @end
 
 @implementation TaskDetailsViewController
-@synthesize taskid,mainscroll,mainview,lblamt,lblbidenddt,lblestimatedtime,lbllocation,lblrepeattask,lbltaskcreatedt,lbltaskenddt,lbltasktitle,lbltasktype,lblusertype,taskimage2,taskimage3,taskimg1,MapView,titleview,lbltaskcode,tasktypeview,lblimage,menuview,btnallbids,btndetails,btnmesgboard,tblbids,tblmesg,btnmesg,underlineimg,lbladddetail,lbladditionalDetail,btntaskcancel,lblnodata,btntaskimg1,btntaskimg2,btntaskimg3;
+@synthesize taskid,mainscroll,mainview,lblamt,lblbidenddt,lblestimatedtime,lbllocation,lblrepeattask,lbltaskcreatedt,lbltaskenddt,lbltasktitle,lbltasktype,lblusertype,taskimage2,taskimage3,taskimg1,MapView,titleview,lbltaskcode,tasktypeview,lblimage,menuview,btnallbids,btndetails,btnmesgboard,tblbids,tblmesg,btnmesg,underlineimg,lbladddetail,lbladditionalDetail,btntaskcancel,lblnodata,btntaskimg1,btntaskimg2,btntaskimg3,lblContractorSpend;
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
@@ -100,7 +100,7 @@
     NSLog(@"task id=%@",taskid);
      menuview.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"topbar-1"]];
     urlobj=[[UrlconnectionObject alloc]init];
-    mainscroll.contentSize = CGSizeMake(0, 1060);
+    mainscroll.contentSize = CGSizeMake(0, 1150);
   //   mainscroll.contentSize = CGSizeMake(0, mainscroll.bounds.size.height * 1.5);
     [self taskdetailUrl];
     
@@ -264,7 +264,7 @@
             MapView.frame=CGRectMake(MapView.frame.origin.x, tasktypeview.frame.origin.y+tasktypeview.frame.size.height+2, MapView.frame.size.width, MapView.frame.size.height);
         //    NSLog(@"mainscroll height=%f",mainscroll.contentSize.height);
           //  mainscroll.contentSize = CGSizeMake(0, mainscroll.contentSize.height+len-21);
-             mainscroll.contentSize = CGSizeMake(0, 1060+len-21);
+             mainscroll.contentSize = CGSizeMake(0, 1150+len-21);
             lbladditionalDetail.text=adddetail;
          //   NSLog(@"additional detail=%d",len);
         }
@@ -300,6 +300,15 @@
         {
             lblamt.text=[NSString stringWithFormat:@"%@ %@ %@",@"$ ",[taskdic valueForKey:@"pay_for_task"],@" / job"];
         }
+        if ([[taskdic valueForKey:@"contractor_spend"] floatValue]>100)
+        {
+            lblContractorSpend.text=[NSString stringWithFormat:@"%@ %@",@"$",[taskdic valueForKey:@"contractor_spend"]];
+        }
+        else
+        {
+            lblContractorSpend.text=@"N/A";
+        }
+
      //   lblamt.text=[@"$ " stringByAppendingString:[taskdic valueForKey:@"pay_for_task"]];
          lblrepeattask.text=[[taskdic valueForKey:@"repeated_task"] stringByAppendingString:@" Weeks"];
         NSString *str1;
