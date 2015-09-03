@@ -630,7 +630,16 @@
     
     taskclsdt=[[self changeformate_string24hr:taskclsdatetime] substringWithRange:NSMakeRange(0,10)];
     taskclstm=[[self changeformate_string24hr:taskclsdatetime] substringWithRange:NSMakeRange(11,8)];
-    NSString *conpay=[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] substringWithRange:NSMakeRange(2,[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] length]-2)];
+    NSString *conpay;
+    if ([[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] isEqualToString:@"None"])
+    {
+        conpay=@"0";
+    }
+    else
+    {
+        conpay=[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] substringWithRange:NSMakeRange(2,[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] length]-2)];
+    }
+  //  NSString *conpay=[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] substringWithRange:NSMakeRange(2,[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] length]-2)];
     NSString *pay=[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"payamt"] substringWithRange:NSMakeRange(2,[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"payamt"] length]-2)];
     // user type is always 0 for task poster (1 for task runner)
     

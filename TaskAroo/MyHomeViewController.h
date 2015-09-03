@@ -22,7 +22,7 @@
 @interface MyHomeViewController : GlobalViewController
 {
     UITableView *estimatedaytable,*citytable,*repeattasktable,*estimatetimetable;
-    NSMutableArray *arrday,*arrcity,*arrrepeattask,*arrtime,*arramt,*arrimage;
+    NSMutableArray *arrday,*arrcity,*arrrepeattask,*arrtime,*arramt,*arrimage,*arrContractoramt;
     UIPickerView *amtpicker,*estimatedaypicker,*estimatetimepicker,*repeattaskpicker,*provincepicker;
     UIPickerView *contactoramtpicker;
     UIDatePicker *datepicker,*taskcompdatepicker;

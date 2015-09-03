@@ -86,7 +86,7 @@
     txtlastname.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Last Name" attributes:@{NSForegroundColorAttributeName: placeholdercolor}];
      txtlang.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Languages Spoken" attributes:@{NSForegroundColorAttributeName: placeholdercolor}];
      txtpcode.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Postal Code" attributes:@{NSForegroundColorAttributeName: placeholdercolor}];
-     txtphno.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Phone Number" attributes:@{NSForegroundColorAttributeName: placeholdercolor}];
+     txtphno.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter Your Number Without Space" attributes:@{NSForegroundColorAttributeName: placeholdercolor}];
      txtemail.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: placeholdercolor}];
      txtpassword.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: placeholdercolor}];
      txtconfirmpass.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm Password" attributes:@{NSForegroundColorAttributeName: placeholdercolor}];

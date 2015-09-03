@@ -300,13 +300,21 @@
         {
             lblamt.text=[NSString stringWithFormat:@"%@ %@ %@",@"$ ",[taskdic valueForKey:@"pay_for_task"],@" / job"];
         }
-        if ([[taskdic valueForKey:@"contractor_spend"] floatValue]>100)
+        NSString *camt=[taskdic valueForKey:@"contractor_spend"];
+        if (camt.length==0 || [camt isEqualToString:@"None"])
+        {
+            lblContractorSpend.text=@"N/A";
+        }
+        else
+        {
+        if ([[taskdic valueForKey:@"contractor_spend"] floatValue]>0)
         {
             lblContractorSpend.text=[NSString stringWithFormat:@"%@ %@",@"$",[taskdic valueForKey:@"contractor_spend"]];
         }
         else
         {
             lblContractorSpend.text=@"N/A";
+        }
         }
 
      //   lblamt.text=[@"$ " stringByAppendingString:[taskdic valueForKey:@"pay_for_task"]];

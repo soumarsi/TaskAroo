@@ -291,9 +291,17 @@
     
     //amt array
     arramt=[[NSMutableArray alloc]init];
-    for (int i=0; i<=1000; i++) {
+    for (int i=0; i<=5000; i++) {
         NSString *val=[NSString stringWithFormat:@"%d", i];
         [arramt addObject:val];
+    }
+    
+    arrContractoramt=[[NSMutableArray alloc]init];
+    
+    [arrContractoramt addObject:@"None"];
+    for (int i=1; i<=2000; i++) {
+        NSString *val=[NSString stringWithFormat:@"%d", i];
+        [arrContractoramt addObject:val];
     }
     
     arrcity=[[NSMutableArray alloc]initWithObjects:@"Alberta",@"British Columbia",@"Manitoba",@"New Brunswick", @"Newfoundland and Labrador",@"Northwest Territories",@"Nova Scotia",@"Nunavut",@"Ontario",@"Prince Edward Island",@"Quebec",@"Saskatchewan",@"Yukon", nil];
@@ -3080,7 +3088,8 @@
 {
     if ([contactorpay isEqualToString:@"" ] || contactorpay ==nil) {
         
-        txtcontractorpay.text=[@"$ " stringByAppendingString:[arramt objectAtIndex:0]];
+      //  txtcontractorpay.text=[@"$ " stringByAppendingString:[arrContractoramt objectAtIndex:0]];
+        txtcontractorpay.text=[arrContractoramt objectAtIndex:0];
     }
     else
     {
@@ -3752,9 +3761,13 @@
 }
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    if(pickerView==amtpicker || pickerView==contactoramtpicker)
+    if(pickerView==amtpicker)
     {
     return arramt.count;
+    }
+    else if (pickerView==contactoramtpicker)
+    {
+        return arrContractoramt.count;
     }
     else if (pickerView==estimatedaypicker)
     {
@@ -3779,9 +3792,22 @@
 }
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    if(pickerView==amtpicker || pickerView==contactoramtpicker)
+    if(pickerView==amtpicker)
     {
         NSString *amt=[@"$ " stringByAppendingString:arramt[row]];
+        return amt;
+    }
+    else if(pickerView==contactoramtpicker)
+    {
+        NSString *amt;
+        if (row==0)
+        {
+           amt=arrContractoramt[row];
+        }
+        else
+        {
+        amt=[@"$ " stringByAppendingString:arrContractoramt[row]];
+        }
         return amt;
     }
     else if (pickerView==estimatedaypicker)
@@ -3816,7 +3842,14 @@
     }
     else if (pickerView==contactoramtpicker)
     {
-        contactorpay=[@"$ " stringByAppendingString:arramt[row]];;
+        if (row==0)
+        {
+            contactorpay=arrContractoramt[row];
+        }
+        else
+        {
+        contactorpay=[@"$ " stringByAppendingString:arrContractoramt[row]];
+        }
        // btncontractpayarrow.selected=NO;
         
            }
@@ -4112,7 +4145,14 @@
     
     taskclsdt=[[self changeformate_string24hr:taskclsdatetime] substringWithRange:NSMakeRange(0,10)];
     taskclstm=[[self changeformate_string24hr:taskclsdatetime] substringWithRange:NSMakeRange(11,8)];
-    NSString *conpay=[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] substringWithRange:NSMakeRange(2,[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] length]-2)];
+    NSString *conpay;
+    if ([[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] isEqualToString:@"None"])
+    {
+        conpay=@"0";
+    }
+    else{
+    conpay=[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] substringWithRange:NSMakeRange(2,[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"contractorpay"] length]-2)];
+    }
     NSString *pay=[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"payamt"] substringWithRange:NSMakeRange(2,[[[prefs valueForKey:@"taskdetaildic"] valueForKey:@"payamt"] length]-2)];
     // user type is always 0 for task poster (1 for task runner)
     
